@@ -2,8 +2,8 @@ import "./../css/About.css";
 
 const About = () => {
     return (
-        <div id="home">
-            <p>My about Us page</p>
+        <div id="home" className="main-content">
+            <h2>My about Us page</h2>
         </div>
     );
 };
