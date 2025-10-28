@@ -5,3 +5,32 @@
 #main-nav a {
     text-decoration: none;
 }
+
+#main-nav .hide-small {
+    display: none;
+}
+
+#toggle-nav {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+}
+
+@media only screen and(min-width: 768px) {
+    #toggle-nav {
+        display: none;
+    }
+
+    #main-nav button {
+        display: none;
+    }
+
+    #main-nav .hide-small {
+        display: flex;
+    }
+
+    #main-nav li {
+
+    }
+}

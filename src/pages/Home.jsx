@@ -1,8 +1,9 @@
 import "./../css/Home.css";
+import Slideshow from "../componets/Slideshow";
 
 const Home = () => {
     return  (
-        <h2>I'm Home</h2>
+        <Slideshow />
     );
 };
 
