@@ -1,11 +1,46 @@
 import "./../css/Contact.css";
+import {useState} from "react";
 
 const Contact = () => {
-    return (
-        <div id="contact" className="main-content">
-            <h2>Contact</h2>
-        </div>
-    );
-};
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "79bfdd73-fff8-4a41-8eb2-23c90a33b16a");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
+  return (
+    <div>
+      <form onSubmit={onSubmit}>
+        <input type="text" name="name" required/>
+        <input type="email" name="email" required/>
+        <textarea name="message" required></textarea>
+
+        <button type="submit">Submit Form</button>
+
+      </form>
+      <span>{result}</span>
+
+    </div>
+  );
+}
 
 export default Contact;
