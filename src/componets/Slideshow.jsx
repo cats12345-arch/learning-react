@@ -24,8 +24,13 @@ const Slideshow = () => {
     return (
         <section id="slideshow">
             <img src={images[slideIndex]} />
-            <a onClick = {slideFoward} id="right-arrow" className="arrow" href="#">&gt;</a>
-             <a onClick = {slideBackward} id="left-arrow" className="arrow" href="#">&lt;</a>
+            <a onClick={(e) => {
+                e.preventDefault();
+                slideFoward();
+                }} id="right-arrow" className="arrow" href="#">&gt;</a>
+            <a onClick={(e) => {
+                e.preventDefault();
+                slideBackward();}} id="left-arrow" className="arrow" href="#">&lt;</a>
         </section>
     );
 };
