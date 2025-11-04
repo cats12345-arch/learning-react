@@ -1,5 +1,7 @@
 import "./../css/Houses.css";
 import House from "../componets/House";
+import {useState, useEffect} from "react";
+import axios from "axios";
 
 const Houses = () => {
     return (
