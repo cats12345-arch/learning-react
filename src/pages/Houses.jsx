@@ -1,19 +1,15 @@
-import "./../css/Houses.css";
-import House from "../componets/House";
 import {useState, useEffect} from "react";
 import axios from "axios";
+import "./../css/House.css";
+import HouseList from "../componets/HouseList";
 
 const Houses = () => {
     return (
-        <div id="houses" className="main-content">
+        <main id="houses" className="main-content">
             <h2>Houses</h2>
-            <div className="columns">
-                <House name="Farm House" num_bedrooms="5"/>
-                <House name="Mansion" num_bedrooms="10"/>
-                <House name="Family Home" num_bedrooms="5"/>
-            </div>
-        </div>
-    );
+            <HouseList num="9" />
+        </main>
+    )
 };
 
 export default Houses;
